@@ -1,0 +1,20 @@
+{
+  "name": "XapiStatement",
+  "description": "מייצג הצהרת xAPI שנשלחה ל-LRS (Learning Record Store).",
+  "fields": [
+    { "name": "actor", "type": "json", "required": true, "description": "הזהות של המבצע (הסטודנט)." },
+    { "name": "verb", "type": "json", "required": true, "description": "הפעולה שבוצעה (לדוגמה: 'answered', 'completed')." },
+    { "name": "object", "type": "json", "required": true, "description": "האובייקט שעליו בוצעה הפעולה." },
+    { "name": "context", "type": "json", "description": "הקשר הפעילות, כולל פרטי הסימולציה והקבוצה." },
+    { "name": "timestamp", "type": "datetime", "default": "now()" },
+    { "name": "student_id", "type": "uuid", "foreign_key": "Student" },
+    { "name": "sent_to_lrs", "type": "boolean", "default": false },
+    { "name": "lrs_response", "type": "json" }
+  ],
+  "rls_rules": {
+    "select": "user.role === 'admin' || user.role === 'teacher'",
+    "insert": "user.role === 'system'",
+    "update": "user.role === 'system'",
+    "delete": "user.role === 'admin'"
+  }
+}
