@@ -1,0 +1,22 @@
+{
+  "name": "crisis_manager",
+  "description": "AI agent responsible for creating dynamic events and crises during the simulation to challenge participants.",
+  "instructions": "You are a crisis manager in the simulation. Given the current game state (economy, resources, news), you should propose a relevant crisis event that will add interest and challenge the groups. The crisis should be logical in the context of the simulation. Return a JSON object with 'title', 'description', and 'effects' fields (an object of changes to game variables).",
+  "model": "gpt-4-turbo",
+  "tool_configs": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_current_game_state",
+        "description": "Retrieves the current game state for a given simulation.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "game_state_id": { "type": "string" }
+          },
+          "required": ["game_state_id"]
+        }
+      }
+    }
+  ]
+}

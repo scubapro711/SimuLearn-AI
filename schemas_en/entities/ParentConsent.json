@@ -1,0 +1,18 @@
+{
+  "name": "ParentConsent",
+  "description": "Records parental consent for student participation in activities.",
+  "fields": [
+    { "name": "student_id", "type": "uuid", "foreign_key": "Student", "required": true },
+    { "name": "parent_name", "type": "text", "required": true },
+    { "name": "parent_email", "type": "text", "required": true },
+    { "name": "consent_status", "type": "text", "options": ["pending", "approved", "rejected"], "default": "pending" },
+    { "name": "consent_token", "type": "text", "unique": true },
+    { "name": "date_approved", "type": "datetime" }
+  ],
+  "rls_rules": {
+    "select": "user.role === 'admin' || user.role === 'teacher'",
+    "insert": "user.role === 'system' || user.role === 'teacher'",
+    "update": "user.role === 'system' || user.role === 'teacher'",
+    "delete": "user.role === 'admin'"
+  }
+}

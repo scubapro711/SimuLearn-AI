@@ -1,0 +1,20 @@
+{
+  "name": "XapiStatement",
+  "description": "Represents an xAPI statement sent to the LRS (Learning Record Store).",
+  "fields": [
+    { "name": "actor", "type": "json", "required": true, "description": "The identity of the performer (the student)." },
+    { "name": "verb", "type": "json", "required": true, "description": "The action that was performed (e.g., 'answered', 'completed')." },
+    { "name": "object", "type": "json", "required": true, "description": "The object on which the action was performed." },
+    { "name": "context", "type": "json", "description": "The context of the activity, including simulation and group details." },
+    { "name": "timestamp", "type": "datetime", "default": "now()" },
+    { "name": "student_id", "type": "uuid", "foreign_key": "Student" },
+    { "name": "sent_to_lrs", "type": "boolean", "default": false },
+    { "name": "lrs_response", "type": "json" }
+  ],
+  "rls_rules": {
+    "select": "user.role === 'admin' || user.role === 'teacher'",
+    "insert": "user.role === 'system'",
+    "update": "user.role === 'system'",
+    "delete": "user.role === 'admin'"
+  }
+}
