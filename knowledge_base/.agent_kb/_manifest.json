@@ -1,0 +1,89 @@
+{
+  "project_name": "SimuLearn AI",
+  "project_type": "educational_simulation",
+  "version": "1.0.0",
+  "description": "פלטפורמה לסימולציות חינוכיות מבוססות AI על גבי פלטפורמת Base44",
+  "platform_info": {
+    "base_platform": "Base44",
+    "frontend": "React, Tailwind CSS, Shadcn/ui",
+    "backend": "Deno Runtime",
+    "ai_integration": "OpenAI API",
+    "external_apis": ["Telegram Bot API", "xAPI"]
+  },
+  "target_audience": {
+    "teachers": "יכולים ליצור תרחישי סימולציה מותאמים אישית, לנהל קהילות למידה וקבוצות סטודנטים",
+    "students": "משתתפים בסימולציות חווייתיות, מקבלים החלטות המשפיעות על עולם המשחק"
+  },
+  "knowledge_structure": {
+    "core_docs": {
+      "description": "מסמכי יסוד על מערכת הסימולציות החינוכיות",
+      "files": [
+        "00_platform_persona_and_directives.md",
+        "01_ai_agents_architecture.md",
+        "02_simulation_workflows.md"
+      ]
+    },
+    "knowledge_cards": {
+      "scenarios": {
+        "description": "תרחישי סימולציה, תבניות ודוגמאות",
+        "examples": ["crisis_scenarios", "economic_simulations", "historical_scenarios"]
+      },
+      "agents": {
+        "description": "סוכני AI ייעודיים ותפקידיהם",
+        "examples": ["scenario_engine", "crisis_manager", "rubric_rater", "adaptive_hints"]
+      },
+      "communities": {
+        "description": "ניהול קהילות, קבוצות וסטודנטים",
+        "examples": ["community_templates", "group_management", "student_engagement"]
+      },
+      "assessments": {
+        "description": "מערכות הערכה, רובריקות ומדדי ביצוע",
+        "examples": ["rubric_templates", "assessment_criteria", "performance_metrics"]
+      }
+    }
+  },
+  "integration_settings": {
+    "knowledge_retrieval": {
+      "method": "RAG",
+      "embedding_model": "text-embedding-ada-002",
+      "vector_store": "ChromaDB",
+      "search_method": "semantic_similarity"
+    },
+    "caching": {
+      "strategy": "multi_tier",
+      "core_docs_cache": "memory_persistent",
+      "knowledge_cards_cache": "redis_dynamic",
+      "ttl_default": 3600
+    },
+    "context_engineering": {
+      "max_context_length": 128000,
+      "context_overlap": 200,
+      "chunk_size": 1000,
+      "retrieval_top_k": 5
+    }
+  },
+  "ai_agents": {
+    "scenario_engine": "מנוע הסימולציה המרכזי",
+    "scoring_engine": "מנוע ניקוד וחישוב ביצועים",
+    "economy_balancer": "מאזן את הכלכלה הגלובלית בסימולציה",
+    "crisis_manager": "יוצר אירועים ומשברים דינמיים",
+    "adaptive_hints": "מספק רמזים מותאמים אישית לקבוצות מתקשות",
+    "engagement_nudge": "מעודד מעורבות של סטודנטים פחות פעילים",
+    "rubric_rater": "מעריך תשובות פתוחות על פי רובריקות שהוגדרו מראש"
+  },
+  "key_features": {
+    "scenario_creation": "יצירת תרחישים מונחית AI עם אשף אינטואיטיבי",
+    "dynamic_simulation": "מנוע סימולציה דינמי (Game Loop) עם עיבוד החלטות בזמן אמת",
+    "community_management": "כלים למורים ליצירת קהילות וחלוקת סטודנטים לקבוצות",
+    "smart_assessment": "מערכת הערכה חכמה מבוססת AI עם רובריקות",
+    "telegram_integration": "בוט טלגרם לאינטראקציה בזמן אמת",
+    "moe_compliance": "עמידה בדרישות משרד החינוך עם תמיכה ב-xAPI"
+  },
+  "compliance": {
+    "ministry_of_education": "התאמה מלאה לדרישות xAPI לדיווח על פעילויות למידה",
+    "parent_consent": "מנגנון לניהול הסכמות הורים",
+    "data_privacy": "הגנה על פרטיות סטודנטים ומורים"
+  },
+  "created_at": "2025-09-25T08:00:00Z",
+  "updated_at": "2025-09-25T08:00:00Z"
+}
